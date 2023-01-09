@@ -12,21 +12,20 @@ public class PlayerAI : MonoBehaviour
     public bool isMoving = false;
     public Vector3 oriPos,targetPos;
     public float timeToMove = 0.2f;
-    public int pathCount;
+    public int pathCount = 2;
     
     public void Start()
     {
-        pathCount = _pathfinder.path.Count - 1;
+        //pathCount = _pathfinder.path.Count - 1;
         transform.position = new Vector3(_pathfinder.startX, 0 , -_pathfinder.startY);
-        transform.position = Vector3.Lerp(_pathfinder.path[pathCount].transform.position, _pathfinder.path[pathCount - 1].transform.position, 1 * Time.deltaTime);
     }
 
     public void Update()
     {
-        Input.GetMouseButtonDown(0);
+       /* Input.GetMouseButtonDown(0);
         {
             StartCoroutine(MovePlayer());
-        }
+        }*/
 
     }
 
